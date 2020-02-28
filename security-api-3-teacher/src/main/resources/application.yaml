@@ -1,0 +1,30 @@
+app.name: security-api-3-teacher
+
+server:
+  port: 8086
+  servlet:
+    context-path: /api/t/
+
+spring:
+  application:
+    name: security-api-3-teacher-service
+  profiles:
+    active: dev
+
+keycloak:
+  realm: my-hero-college
+  auth-server-url: http://phenjuly.qicp.vip/auth
+  public-client: true
+  resource: security-api-3-teacher
+  credentials.secret: adfb5809-62dd-4315-aa27-58655daf8d73
+  ssl-required: external
+  bearer-only: true
+  use-resource-role-mappings: false
+
+logging:
+  level:
+    root: debug
+
+---
+spring:
+  profiles: dev

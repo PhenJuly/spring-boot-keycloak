@@ -1,0 +1,8 @@
+{
+  "realm": "my-hero-college",
+  "auth-server-url": "http://phenjuly.qicp.vip/auth",
+  "ssl-required": "external",
+  "resource": "security-web-app-2-student",
+  "public-client": true,
+  "confidential-port": 0
+}

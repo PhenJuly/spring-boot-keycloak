@@ -1,0 +1,38 @@
+app.name: security-web-app-2-student
+
+server:
+  port: 8083
+  servlet:
+    context-path: /security/web/s/
+
+spring:
+  application:
+    name: web-app-2-student-service
+  profiles:
+    active: dev
+
+keycloak:
+  realm: my-hero-college
+  auth-server-url: http://phenjuly.qicp.vip/auth
+#  public-client: true 该值对role和secret的配置有相当大影响
+#  ssl-required: external
+  credentials.secret: d212e0fb-14a7-4192-a8bd-444dcdb04d80
+  resource: security-web-app-2-student
+  use-resource-role-mappings: false
+  confidential-port: 0
+
+logging:
+  level:
+    root: debug
+
+# 是否启用httpclient
+feign:
+  okhttp:
+    enabled: true # 是否启用httpok（性能比httpclient高）
+  httpclient:
+    enabled: false
+    connection-timeout: 3000 # 请求连接超时时间（毫秒）
+
+---
+spring:
+  profiles: dev

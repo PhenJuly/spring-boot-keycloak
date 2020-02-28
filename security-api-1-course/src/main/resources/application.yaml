@@ -1,0 +1,30 @@
+app.name: security-api-1-course
+
+server:
+  port: 8084
+  servlet:
+    context-path: /api/c/
+
+spring:
+  application:
+    name: security-api-1-course-service
+  profiles:
+    active: dev
+
+keycloak:
+  realm: my-hero-college
+  auth-server-url: http://phenjuly.qicp.vip/auth
+  public-client: true
+  resource: security-api-1-course
+  credentials.secret: eafa09fc-92dd-4ec9-a55a-762452e43e17
+  ssl-required: external
+  bearer-only: true
+  use-resource-role-mappings: false
+
+logging:
+  level:
+    root: debug
+
+---
+spring:
+  profiles: dev

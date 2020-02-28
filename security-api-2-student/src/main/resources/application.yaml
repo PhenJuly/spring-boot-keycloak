@@ -1,0 +1,30 @@
+app.name: security-api-2-student
+
+server:
+  port: 8085
+  servlet:
+    context-path: /api/s/
+
+spring:
+  application:
+    name: security-api-2-student-service
+  profiles:
+    active: dev
+
+keycloak:
+  realm: my-hero-college
+  auth-server-url: http://phenjuly.qicp.vip/auth
+  public-client: true
+  resource: security-api-2-student
+  credentials.secret: 93f8c382-8b58-42cb-981b-7d6282b71d09
+  ssl-required: external
+  bearer-only: true
+  use-resource-role-mappings: false # 为false时，能自动获取到Realm配置的权限
+
+logging:
+  level:
+    root: debug
+
+---
+spring:
+  profiles: dev
