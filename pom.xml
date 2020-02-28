@@ -29,10 +29,6 @@
         <module>./keycloak-services-identity-provider-social-wechat</module>
         <module>./keycloak-user-storage-provider</module>
         <module>./keycloak-authenticator</module>
-        <module>./keycloak-authenticator-sms</module>
-
-        <module>./sign-in-with-apple</module>
-
     </modules>
 
     <dependencyManagement>
